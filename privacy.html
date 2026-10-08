@@ -10,34 +10,80 @@
     h1{font-size:1.4rem;margin:0 0 8px}
     h2{font-size:1.05rem;margin:1.4rem 0 .4rem}
     p,li{margin:.4rem 0}
+    table{border-collapse:collapse;width:100%;margin:.6rem 0;font-size:.95rem}
+    th,td{border:1px solid #e4e7ec;padding:6px 8px;text-align:left;vertical-align:top}
+    th{background:#f4f5f7}
+    .meta{color:#555}
+    .todo{background:#fff4e5;padding:0 3px;border-radius:3px}
+    hr{border:0;border-top:1px solid #e4e7ec;margin:2rem 0}
+    @media (max-width:560px){main{margin:0;border-radius:0;padding:16px}}
   </style>
 </head>
 <body>
 <main>
   <h1>Политика конфиденциальности расширения «Агаева ID»</h1>
-  <p>Дата: 4 октября 2026 г.</p>
-  <p>Расширение связывает вкладку приложения Битрикс24 на сайте <code>https://eldaga-lead-rating-api.layero.app</code> с программой «Агаева ID», которая уже запущена на том же компьютере и слушает только <code>127.0.0.1</code>.</p>
+  <p class="meta">Редакция от 8 октября 2026 г. · <a href="#en">English version</a> · <a href="#editions">Предыдущие редакции</a></p>
 
-  <h2>Какие данные проходят через расширение</h2>
-  <p>Только то, что уже показано в открытой вкладке Битрикс24 и нужно для запроса на сайте ФССП:</p>
+  <h2>1. Общие положения</h2>
+  <p>Настоящая политика описывает, какие данные обрабатывает расширение для браузера Google Chrome «Агаева ID» (далее — Расширение), зачем и как.</p>
+  <p>Разработчик и оператор данных: <span class="todo">[наименование организации]</span>, ИНН <span class="todo">[ИНН]</span>, адрес: 119034, г. Москва, Малый Кисельный пер., д. 6, стр. 1, пом. 1/2. Телефоны: +7 495 118-36-74, 8 800 333-87-58. Эл. почта: <span class="todo">[email]</span>.</p>
+  <p>Цель Расширения — подготовить для клиента в удобном виде сведения о его исполнительных производствах из открытой базы Федеральной службы судебных приставов (fssp.gov.ru), чтобы клиент мог спланировать свои дальнейшие действия. Других функций у Расширения нет.</p>
+  <p>Расширение предназначено для сотрудников оператора и работает только вместе с приложением оператора в Битрикс24.</p>
+
+  <h2>2. Какие данные обрабатываются</h2>
+  <table>
+    <tr><th>Данные</th><th>Откуда</th><th>Зачем</th></tr>
+    <tr><td>Фамилия, имя, отчество, дата рождения клиента</td><td>Карточка контакта в Битрикс24 оператора</td><td>Поиск на сайте ФССП</td></tr>
+    <tr><td>Сведения об исполнительных производствах: номер и дата ИП, реквизиты документа, предмет исполнения, суммы долга и исполнительского сбора, отдел и пристав, место рождения</td><td>Открытая база ФССП</td><td>Отчёт для клиента в форматах Excel и PDF</td></tr>
+    <tr><td>Изображение капчи и введённый сотрудником код</td><td>Сайт ФССП / сотрудник</td><td>Прохождение проверки на сайте ФССП</td></tr>
+    <tr><td>Ключ доступа (токен) приложения Битрикс24 и адрес портала</td><td>Вкладка приложения оператора</td><td>Чтение контакта и прикрепление файлов к нему</td></tr>
+    <tr><td>Служебные cookie сайта ФССП</td><td>Ответы сайта ФССП</td><td>Сохранение сеанса поиска между шагами</td></tr>
+  </table>
+  <p>Расширение не собирает историю браузера, содержимое других сайтов, пароли, данные о местоположении и сведения о действиях пользователя.</p>
+
+  <h2>3. Передача и хранение данных</h2>
+  <p>Вся обработка выполняется в браузере сотрудника. Данные передаются только по защищённому протоколу HTTPS и только в два места:</p>
   <ul>
-    <li>данные клиента, которые пользователь отправляет на проверку;</li>
-    <li>картинка капчи и код, который пользователь вводит сам;</li>
-    <li>страница результата проверки;</li>
-    <li>готовый PDF, чтобы записать его в ленту Битрикс24.</li>
+    <li>на сайт ФССП (fssp.gov.ru, is-go.fssp.gov.ru) — ФИО и дата рождения для поиска и код капчи;</li>
+    <li>в портал Битрикс24 оператора — запрос карточки контакта и готовые файлы PDF и Excel, которые прикрепляются к контакту.</li>
   </ul>
+  <p>Результат проверки также передаётся во вкладку приложения оператора в Битрикс24 для показа сотруднику.</p>
+  <p>Расширение не отправляет данные на серверы разработчика или третьих лиц. Расширение не сохраняет данные на диске: сеанс поиска хранится в памяти браузера не дольше 20 минут, временная вкладка ФССП закрывается сразу после печати PDF.</p>
+  <p>Токен Битрикс24 используется только для запросов к порталу оператора и не сохраняется.</p>
+  <p>Сохранённые в Битрикс24 файлы хранятся и обрабатываются оператором в соответствии с его общей политикой обработки персональных данных и законодательством РФ, включая Федеральный закон № 152-ФЗ «О персональных данных».</p>
 
-  <h2>Куда данные не отправляются</h2>
-  <p>Расширение не отправляет эти данные разработчику, в магазин Chrome и на любые другие серверы. Обмен идёт между вкладкой Битрикс24 и программой на этом же компьютере. Расширение не ведёт аналитику, не хранит историю проверок и не продаёт данные.</p>
+  <h2>4. Ограничения использования, права и контакты</h2>
+  <p>Данные, полученные Расширением, не продаются и не передаются третьим лицам, не используются для рекламы, для оценки кредитоспособности или кредитования и ни для каких целей, кроме указанной в разделе 1.</p>
+  <p>Использование данных соответствует Правилам Chrome Web Store в отношении пользовательских данных, включая требования об ограниченном использовании (Limited Use).</p>
+  <p>Клиент вправе запросить сведения о своих данных, их уточнение или удаление, а также отозвать согласие на обработку, обратившись к оператору по контактам из раздела 1.</p>
+  <p>Оператор может изменять эту политику. Новая редакция действует с момента публикации по этому адресу. Предыдущие редакции остаются доступными по ссылкам ниже.</p>
 
-  <h2>Сколько данные хранятся</h2>
-  <p>Расширение держит данные только в памяти, пока выполняется текущая проверка. Отдельной базы у расширения нет. PDF и результат проверки сохраняет само приложение Битрикс24 по действию пользователя.</p>
+  <hr>
 
-  <h2>Права расширения</h2>
-  <p>Расширение читает только вкладку указанного выше приложения и обращается только к локальной программе «Агаева ID». Другие сайты и вкладки оно не читает.</p>
+  <h2 id="en">Privacy Policy — "Агаева ID" Chrome extension (English version)</h2>
+  <p class="meta">Version of October 8, 2026</p>
+  <p><strong>Developer and data controller:</strong> <span class="todo">[company name]</span>, INN <span class="todo">[INN]</span>, 6/1 Maly Kislovsky lane, premises 1/2, Moscow 119034, Russia. Phone: +7 495 118-36-74. Email: <span class="todo">[email]</span>.</p>
+  <p><strong>Purpose.</strong> The extension prepares, in a convenient form, a report for our client about the client's own enforcement proceedings from the public database of the Russian Federal Bailiff Service (fssp.gov.ru), so that the client can plan further actions. It is used by our staff only together with our own Bitrix24 application and has no other functionality.</p>
+  <p><strong>Data processed.</strong></p>
+  <ul>
+    <li>Client's full name and date of birth — read from our Bitrix24 CRM contact, used for the FSSP search.</li>
+    <li>Enforcement-proceedings records returned by the public FSSP database (case numbers, amounts owed, bailiff office) — used to build the Excel and PDF report.</li>
+    <li>Captcha image and the code entered by the staff member.</li>
+    <li>Bitrix24 app access token and portal address — used only to read the contact and attach the report files.</li>
+    <li>Session cookies of the FSSP website — used only to keep the search session between steps.</li>
+  </ul>
+  <p>The extension does not collect browsing history, content of other websites, passwords, location or activity data.</p>
+  <p><strong>Sharing and storage.</strong> All processing happens in the user's browser. Data is sent over HTTPS only to fssp.gov.ru and to our own Bitrix24 portal; results are shown in our Bitrix24 app tab. No data is sent to the developer's servers or to any third party. Nothing is written to disk: search sessions are kept in memory for no more than 20 minutes, and the temporary FSSP tab is closed right after printing. The Bitrix24 token is not stored.</p>
+  <p><strong>Limited Use.</strong> Data is never sold or transferred to third parties, never used for advertising, creditworthiness or lending purposes, or for any purpose other than the one stated above. The use of information received by the extension adheres to the Chrome Web Store User Data Policy, including the Limited Use requirements.</p>
+  <p><strong>Your rights.</strong> Clients may request access to, correction or deletion of their data, or withdraw consent, using the contacts above.</p>
+  <p><strong>Changes.</strong> We may update this policy; the new version takes effect when published at this address. Previous versions remain available below.</p>
 
-  <h2>Контакт</h2>
-  <p>Вопросы по этим правилам можно оставить в репозитории, где опубликована эта страница.</p>
+  <hr>
+
+  <h2 id="editions">Предыдущие редакции / Previous versions</h2>
+  <ul>
+    <li><a href="privacy/2026-10-04.html">Редакция от 4 октября 2026 г.</a></li>
+  </ul>
 </main>
 </body>
 </html>
